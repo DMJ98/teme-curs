@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  gap: 24px;
+}
+
+body details {
+  flex: 1;
+}
+
+body div {
+  flex: 1;
+}
