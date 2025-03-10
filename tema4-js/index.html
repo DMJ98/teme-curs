@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input
+        id="scoreInput"
+        placeholder="Insert the score number"
+        type="number"
+        min="0"
+        max="100"
+      />
+      <button id="scoreButton">Set</button>
+      <p id="scoreText"></p>
+    </form>
+    <form>
+      <input
+        type="email"
+        id="emailInput"
+        placeholder="Insert your email here"
+        minlength="6"
+      />
+      <button id="emailBtn">Set Email</button>
+      <p class="email-text" id="emailText"></p>
+    </form>
+    <form>
+      <input
+        type="number"
+        id="bankInput"
+        placeholder="Insert the withdraw amount"
+      />
+      <button id="bankBtn">Withdraw</button>
+      <p>You have 200$ in your bank account</p>
+      <p id="bankText"></p>
+    </form>
+    <script src="./script.js"></script>
+  </body>
+</html>

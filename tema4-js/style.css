@@ -1,0 +1,7 @@
+body input {
+  width: 180px;
+}
+
+.email-text {
+  color: red;
+}
