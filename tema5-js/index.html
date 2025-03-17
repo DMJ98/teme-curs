@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="color-switcher-container">
+      <div class="see-colors-container">
+        <div>
+          <label
+            >See all colors:
+            <select id="options">
+              <option value="0">Press me: #AD636C</option>
+              <option value="1">Press me: #009B72</option>
+              <option value="2">Press me: #6761AB</option>
+              <option value="3">Press me: #347E8D</option>
+              <option value="4">Press me: #798186</option>
+            </select>
+          </label>
+        </div>
+        <p id="numberOfClicks">Clicked : 0 times</p>
+      </div>
+      <h2>Background color: <span id="titleHex">#AD636C</span></h2>
+      <div class="button-container">
+        <button id="previousBtn">PREVIOUS</button>
+        <button id="clickMeBtn">CLICK ME</button>
+      </div>
+      <button id="resetBtn">RESET</button>
+    </section>
+    <script src="./color-swticher.js"></script>
+  </body>
+</html>

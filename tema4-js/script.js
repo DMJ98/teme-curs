@@ -392,3 +392,102 @@ const checkOffice = (day, hour) => {
 };
 
 checkOffice(1, 14);
+
+// Rezolvare Mentor:
+
+//EMAIL
+const validateEmail = (email) => {
+  if (email.length <= 6) {
+    return 'Invalid email';
+  }
+
+  if (email.includes('@') === false || email.includes('.') === false) {
+    return 'Invalid email';
+  }
+
+  let numberOfAronds = 0;
+  let numberOfDots = 0;
+  for (let i = 0; i < email.length; i++) {
+    if (email[i] === '@') {
+      numberOfAronds++;
+    }
+    if (email[i] === '.') {
+      numberOfDots++;
+    }
+  }
+  if (numberOfAronds > 1 || numberOfDots > 1) {
+    return 'Invalid email';
+  }
+
+  const specialCharacters = ['!', '#', '$', '%']; //etc
+
+  for (let i = 0; i < email.length; i++) {
+    if (specialCharacters.includes(email[i]) === true) {
+      return 'Invalid email';
+    }
+  }
+
+  for (let i = 0; i < email.length; i++) {
+    if (email[i] === '@') {
+      const characterBeforeArond = email(i - 1);
+      const characterAfterArond = email(i + 1);
+
+      if (characterBeforeArond === '-' || characterBeforeArond === '_') {
+        return 'Invalid email';
+      }
+      if (characterAfterArond === '-' || characterAfterArond === '_') {
+        return 'Invalid email';
+      }
+    }
+  }
+
+  let indexOfArond;
+  let indexOfDot;
+
+  for (let i = 0; i < email.length; i++) {
+    if (email[i] === '@') {
+      indexOfArond = i;
+    }
+    if (email[i] === '.') {
+      indexOfDot = i;
+    }
+  }
+
+  if (indexOfArond > indexOfDot) {
+    return 'Invalid email';
+  }
+
+  if (email[0] === '@') {
+    return 'Invalid email';
+  }
+
+  if (indexOfDot - indexOfArond === 1) {
+    return 'Invalid email';
+  }
+
+  if (email[email.length - 1] === '.' || email[email.length - 2] === '.') {
+    return 'Invalid email';
+  }
+};
+
+//TRIUNGHIURI
+
+const getTriangleType = (a, b, c) => {
+  if (a <= 0 || b <= 0 || c <= 0) {
+    return 'Invalid triangle';
+  }
+
+  if (
+    a * a === b * b + c * c ||
+    b * b === a * a + c * c ||
+    c * c === b * b + a * a
+  ) {
+    return 'Right triangle';
+  }
+};
+
+//EXTRA: solutie pt right triangle
+// const sides = [a, b, c].sort((x, y) => x - y);
+//   if (Math.pow(sides[0], 2) + Math.pow(sides[1], 2) === Math.pow(sides[2], 2)) {
+//     return 'Right Triangle';
+//   }
